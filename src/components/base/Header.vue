@@ -1,24 +1,3 @@
-<script setup>
-import Container from "@/components/layouts/Container.vue";
-const props = defineProps({
-  title: String,
-  description: String,
-});
-// props
-//
-// The props are passed to the component as a property.
-//
-
-// export default {
-//   components: { Container },
-//   name: "Header",
-//   props: {
-//     title: String,
-//     description: String,
-//   },
-// };
-</script>
-
 <template>
   <div class="relative">
     <div class="absolute inset-0">
@@ -45,15 +24,20 @@ const props = defineProps({
             lg:text-6xl
           "
         >
-          {{ props.title ?? $route.meta.title }}
+          {{ title ?? $route.meta.title }}
         </h1>
-        <p
-          v-if="props.description"
-          class="mt-6 text-xl text-indigo-100 max-w-3xl"
-        >
-          {{ props.description }}
+        <p v-if="description" class="mt-6 text-xl text-indigo-100 max-w-3xl">
+          {{ description }}
         </p>
       </div>
     </Container>
   </div>
 </template>
+
+<script setup>
+import Container from "@/components/layouts/Container.vue";
+const { title, description } = defineProps({
+  title: String,
+  description: String,
+});
+</script>

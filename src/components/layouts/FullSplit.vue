@@ -1,3 +1,11 @@
+<script>
+const { flipped, leftClass, rightClass } = defineProps({
+  flipped: Boolean,
+  leftClass: String,
+  rightClass: String,
+});
+</script>
+
 <template>
   <main class="lg:relative">
     <div
@@ -27,22 +35,3 @@
     </div>
   </main>
 </template>
-
-<script>
-export default {
-  props: {
-    flipped: {
-      type: Boolean,
-      default: false,
-    },
-    leftClass: {
-      type: String,
-      default: "",
-    },
-    rightClass: {
-      type: String,
-      default: "",
-    },
-  },
-};
-</script>
