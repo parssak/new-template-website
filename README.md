@@ -1,6 +1,6 @@
 # Vue Website
 
-# Getting Started
+## Getting Started
 
 To run locally, run `yarn dev`.
 
