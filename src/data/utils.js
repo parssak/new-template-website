@@ -1,4 +1,5 @@
-const BASE_URL = import.meta.env.BASE_URL;
+// remove last /
+const BASE_URL = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 export const getRoutes = (routes) => {
   return [

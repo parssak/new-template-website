@@ -1,5 +1,11 @@
-<script>
+<script lang="ts">
 import Container from "@/components/layouts/Container.vue";
+
+type Depth = "../" | "../../" | "../../../";
+const getImage = (depth: Depth, name: string) => {
+  // @ts-ignore
+  return new URL(`${depth}assets/${name}`, import.meta.url).href;
+};
 
 export default {
   components: { Container },
@@ -28,7 +34,7 @@ export default {
   },
   setup() {
     const getImageUrl = (name) => {
-      return new URL(`../../assets/${name}`, import.meta.url).href;
+      return getImage("../../", name);
     };
     return {
       getImageUrl,

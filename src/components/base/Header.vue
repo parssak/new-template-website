@@ -36,6 +36,7 @@
 
 <script setup>
 import Container from "@/components/layouts/Container.vue";
+
 const { title, description } = defineProps({
   title: String,
   description: String,
