@@ -68,14 +68,12 @@
                 overflow-hidden
               "
             >
-              <div
-                class="relative grid gap-6 bg-white px-2 py-3 sm:gap-2"
-              >
+              <div class="relative grid gap-6 bg-white px-2 py-3 sm:gap-2">
                 <PopoverButton>
                   <router-link
                     v-for="item in dropdownItems"
                     :key="item.label"
-                    :to="item.path"
+                    :to="{ name: item.name }"
                     class="
                       p-3
                       flex
@@ -105,7 +103,7 @@
       </Popover>
     </div>
     <div v-else class="nav-item">
-      <router-link :to="path">
+      <router-link :to="{ name: route.name }">
         <slot> </slot>
       </router-link>
     </div>
@@ -127,6 +125,10 @@ export default {
     dropdownItems: {
       type: Array,
       required: false,
+    },
+    route: {
+      type: Object,
+      required: true,
     },
   },
 };

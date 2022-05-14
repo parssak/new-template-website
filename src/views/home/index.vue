@@ -4,6 +4,7 @@
     <h2>Hello World</h2>
   </Container>
   <Split title="Hello World" />
+  <router-link :to="{ name: 'about' }"> go to about </router-link>
 </template>
 
 <script setup>

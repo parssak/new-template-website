@@ -43,6 +43,7 @@
         <PopoverGroup as="nav" class="hidden md:flex space-x-6 xl:space-x-7">
           <NavItem
             v-for="item in navigation"
+            :route="item"
             :path="item.path"
             :key="item.label"
             :dropdownItems="item.dropdownItems"
