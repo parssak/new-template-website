@@ -1,4 +1,4 @@
-<script>
+<script setup>
 const { flipped, leftClass, rightClass } = defineProps({
   flipped: Boolean,
   leftClass: String,

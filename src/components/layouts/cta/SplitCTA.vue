@@ -23,7 +23,9 @@
           tincidunt duis.
         </p>
         <div class="mt-8">
-          <Button path="/contact">Get in touch</Button>
+          <router-link class="btn btn-xl btn-dark" :to="{ name: 'contact' }"
+            >Get in touch</router-link
+          >
         </div>
       </div>
     </div>
@@ -31,13 +33,11 @@
 </template>
 
 <script>
-import Button from "@/components/base/Button.vue";
 import { ExternalLinkIcon } from "@heroicons/vue/solid";
 
 export default {
   components: {
     ExternalLinkIcon,
-    Button,
   },
 };
 </script>

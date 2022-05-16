@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import Container from "@/components/layouts/Container";
+import Container from '../Container.vue';
 
 const defaultPosts = [
   {

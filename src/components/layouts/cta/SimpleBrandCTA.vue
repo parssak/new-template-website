@@ -23,15 +23,9 @@
         <span class="block text-accent">Start your free trial today.</span>
       </h2>
       <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-        <Button path="/contact">Get Started</Button>
+        <router-link class="btn btn-xl btn-dark" :to="{ name: 'contact' }">Get Started</router-link>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-import Button from "@/components/base/Button.vue";
-export default {
-  components: { Button },
-};
-</script>

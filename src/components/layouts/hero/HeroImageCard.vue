@@ -28,7 +28,7 @@
             "
           >
             <div class="grid place-items-center">
-              <Button path="/contact" theme="light">Contact Us</Button>
+              <router-link class="btn btn-xl btn-dark" :to="{ name: 'contact' }">Contact Us</router-link>
             </div>
           </div>
         </div>
@@ -36,13 +36,6 @@
     </div>
   </main>
 </template>
-
-<script>
-import Button from "@/components/base/Button.vue";
-export default {
-  components: { Button },
-};
-</script>
 
 <style>
 .image-wrapper img {
