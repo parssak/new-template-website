@@ -3,7 +3,7 @@
     <h2 id="footer-heading" class="sr-only">Footer</h2>
     <div class="max-w-7xl mx-auto py-12 pb-8 px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-8">
-        <router-link to="/">
+        <router-link :to="{ name: 'home' }">
           <img class="h-9 w-auto" src="@/assets/logo.svg" alt="Company Name" />
         </router-link>
         <div class="grid sm:grid-cols-2 gap-8">

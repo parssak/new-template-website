@@ -11,7 +11,7 @@
         "
       >
         <div class="flex justify-start items-center lg:w-0 flex-1">
-          <router-link to="/">
+          <router-link :to="{ name: 'home' }">
             <span class="sr-only">Company Name</span>
             <div class="flex items-center">
               <img
@@ -87,7 +87,7 @@
         >
           <div class="pt-5 pb-6 px-5">
             <div class="flex items-center justify-between">
-              <router-link to="/">
+              <router-link :to="{ name: 'home' }">
                 <img
                   class="h-5 w-auto"
                   src="@/assets/logo.svg"
@@ -135,6 +135,7 @@
 
 <script>
 import NavItem from "@/components/nav/NavItem.vue";
+import { navigation } from "@/data";
 import {
   Popover,
   PopoverButton,
@@ -142,7 +143,6 @@ import {
   PopoverPanel,
 } from "@headlessui/vue";
 import { MenuIcon, XIcon } from "@heroicons/vue/outline";
-import { navigation } from "@/data";
 
 export default {
   components: {
