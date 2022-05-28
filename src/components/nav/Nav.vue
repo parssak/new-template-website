@@ -1,7 +1,7 @@
 <template>
   <Popover class="sticky left-0 top-0 w-full z-20 bg-white shadow">
     <div
-      v-if="showAlert"
+      v-if="showAnnouncement"
       class="
         bg-accent-light
         py-3
@@ -16,7 +16,7 @@
       <div class="lg:flex items-center justify-center">
         <p class="text-base text-black">Announcement Text Placeholder</p>
         <button class="lg:ml-6 uppercase font-medium flex items-center">
-          Learn More <ArrowRightIcon class="w-4=6 h-4 ml-2" />
+          Learn More <ArrowRightIcon class="w-4 h-4 ml-2" />
         </button>
       </div>
       <button class="grid items-center absolute right-4" @click="toggleAlert">
@@ -165,7 +165,7 @@ import {
   PopoverGroup,
   PopoverPanel,
 } from "@headlessui/vue";
-import { MenuIcon, XIcon } from "@heroicons/vue/outline";
+import { MenuIcon, XIcon, ArrowRightIcon } from "@heroicons/vue/outline";
 
 export default {
   components: {
@@ -176,13 +176,14 @@ export default {
     MenuIcon,
     XIcon,
     NavItem,
+    ArrowRightIcon,
   },
   setup() {
     return { navigation };
   },
   data() {
-    // Set showAlert to true if you want to preview the alert
-    return { showAlert: true, top: true };
+    // Set showAnnouncement to true if you want to preview the alert
+    return { showAnnouncement: true, top: true };
   },
   watch: {
     // listen for route change
@@ -196,7 +197,7 @@ export default {
   },
   methods: {
     toggleAlert() {
-      this.showAlert = !this.showAlert;
+      this.showAnnouncement = !this.showAnnouncement;
     },
   },
 };

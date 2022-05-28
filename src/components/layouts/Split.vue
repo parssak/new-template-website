@@ -1,22 +1,14 @@
-<script lang="ts">
+<script>
 import Container from "@/components/layouts/Container.vue";
-
-type Depth = "../" | "../../" | "../../../";
-const getImage = (depth: Depth, name: string) => {
-  // @ts-ignore
-  return new URL(`${depth}assets/${name}`, import.meta.url).href;
-};
 
 export default {
   components: { Container },
   props: {
     title: {
       type: String,
-      default: "Title",
     },
     description: {
       type: String,
-      default: "Description",
     },
     flip: {
       type: Boolean,
@@ -34,7 +26,7 @@ export default {
   },
   setup() {
     const getImageUrl = (name) => {
-      return getImage("../../", name);
+      return new URL(`../../assets/${name}`, import.meta.url).href;
     };
     return {
       getImageUrl,
@@ -53,16 +45,21 @@ export default {
 
 <template>
   <Container :class="dark && 'bg-accent-dark'">
-    <div class="grid gap-x-8 gap-y-12 lg:grid-cols-2">
+    <div class="grid gap-8 md:gap-12 lg:grid-cols-2">
       <section :class="flip && `lg:order-1`" class="lg:py-12">
-        <h2 :class="dark && 'text-white'">{{ title }}</h2>
-        <p :class="dark && 'text-white'"><span v-html="description"></span></p>
+        <h2 :class="dark && 'text-white'" class="leading-tight">{{ title }}</h2>
+        <p :class="dark && 'text-white'" class="font-light text-lg">
+          <span v-html="description"></span>
+        </p>
         <slot name="extra-content"></slot>
       </section>
       <section>
-        <div class="split-img-wrapper w-full h-full rounded-md overflow-hidden">
+        <div class="split-img-wrapper w-full h-full rounded-xl overflow-hidden">
           <slot></slot>
-          <img v-if="!hasDefaultSlot" :src="getImageUrl('contact.png')" />
+          <img
+            v-if="!hasDefaultSlot"
+            :src="getImageUrl('images/contact.png')"
+          />
         </div>
       </section>
     </div>
