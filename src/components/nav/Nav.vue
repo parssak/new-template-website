@@ -1,5 +1,28 @@
 <template>
   <Popover class="sticky left-0 top-0 w-full z-20 bg-white shadow">
+    <div
+      v-if="showAlert"
+      class="
+        bg-accent-light
+        py-3
+        flex
+        items-center
+        lg:justify-center
+        relative
+        pl-4
+        pr-12
+      "
+    >
+      <div class="lg:flex items-center justify-center">
+        <p class="text-base text-black">Announcement Text Placeholder</p>
+        <button class="lg:ml-6 uppercase font-medium flex items-center">
+          Learn More <ArrowRightIcon class="w-4=6 h-4 ml-2" />
+        </button>
+      </div>
+      <button class="grid items-center absolute right-4" @click="toggleAlert">
+        <XIcon class="w-6 h-6" />
+      </button>
+    </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div
         class="
@@ -89,7 +112,7 @@
             <div class="flex items-center justify-between">
               <router-link :to="{ name: 'home' }">
                 <img
-                  class="h-5 w-auto"
+                  class="h-7 w-auto"
                   src="@/assets/logo.svg"
                   alt="Company name"
                 />
@@ -112,12 +135,12 @@
               </div>
             </div>
             <div class="mt-6">
-              <nav class="grid gap-y-8">
-                <PopoverButton>
+              <nav class="grid">
+                <PopoverButton class="divide-y-2">
                   <router-link
                     v-for="item in navigation"
                     :key="item.label"
-                    :to="item.path"
+                    :to="{ name: item.name }"
                     class="nav-item-mobile"
                   >
                     <span class="nav-item-mobile__text">{{ item.label }}</span>
@@ -156,6 +179,25 @@ export default {
   },
   setup() {
     return { navigation };
+  },
+  data() {
+    // Set showAlert to true if you want to preview the alert
+    return { showAlert: true, top: true };
+  },
+  watch: {
+    // listen for route change
+    $route() {
+      if (this.$route.name !== "home") {
+        this.top = false;
+      } else {
+        this.top = window.scrollY < 50;
+      }
+    },
+  },
+  methods: {
+    toggleAlert() {
+      this.showAlert = !this.showAlert;
+    },
   },
 };
 </script>

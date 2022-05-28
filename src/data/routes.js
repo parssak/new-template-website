@@ -4,13 +4,13 @@ export const ROUTES_SOURCE = [
     label: "home",
     name: "home",
     component: () => import("@/views/home/index.vue"),
-    meta: { title: "Home" },
+    meta: { title: "Home" }
   },
   {
     path: "/about",
     label: "about",
     name: "about",
     component: () => import("@/views/about/index.vue"),
-    meta: { title: "About" },
-  },
+    meta: { title: "About" }
+  }
 ];

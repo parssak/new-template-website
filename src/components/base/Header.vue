@@ -13,17 +13,7 @@
     </div>
     <Container>
       <div class="py-8">
-        <h1
-          class="
-            text-4xl
-            font-extrabold
-            tracking-tight
-            text-white
-            sm:text-5xl
-            capitalize
-            lg:text-6xl
-          "
-        >
+        <h1 class="text-white capitalize">
           {{ title ?? $route.meta.title }}
         </h1>
         <p v-if="description" class="mt-6 text-xl text-indigo-100 max-w-3xl">

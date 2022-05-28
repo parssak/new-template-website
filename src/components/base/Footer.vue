@@ -8,7 +8,18 @@
         </router-link>
         <div class="grid sm:grid-cols-2 gap-8">
           <div>
-            <h3 class="mb-3 text-sm font-semibold uppercase tracking-wider text-gray-400">Navigation</h3>
+            <h3
+              class="
+                mb-3
+                text-sm
+                font-semibold
+                uppercase
+                tracking-wider
+                text-gray-400
+              "
+            >
+              Navigation
+            </h3>
             <div class="space-y-1">
               <router-link
                 v-for="route in navigation"
@@ -27,7 +38,18 @@
             </div>
           </div>
           <div>
-            <h3 class="mb-3 text-sm font-semibold uppercase tracking-wider text-gray-400">Contact Us</h3>
+            <h3
+              class="
+                mb-3
+                text-sm
+                font-semibold
+                uppercase
+                tracking-wider
+                text-gray-400
+              "
+            >
+              Contact Us
+            </h3>
             <div class="space-y-4">
               <address class="not-italic">
                 Street <br />
@@ -39,9 +61,9 @@
                 >Phone: xxx-xxx-xxxx
               </a>
               <a
-                href="mailto:info@teccweb.com"
+                href="mailto:info@email.com"
                 class="block with-underline w-max hover:text-accent"
-                >Email: email@email.com</a
+                >Email: info@email.com</a
               >
             </div>
           </div>
