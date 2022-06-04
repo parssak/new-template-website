@@ -19,11 +19,6 @@ export default {
       default: false,
     },
   },
-  computed: {
-    hasDefaultSlot() {
-      return !!this.$slots.default;
-    },
-  },
   setup() {
     const getImageUrl = (name) => {
       return new URL(`../../assets/${name}`, import.meta.url).href;
@@ -54,12 +49,20 @@ export default {
         <slot name="extra-content"></slot>
       </section>
       <section>
-        <div class="split-img-wrapper w-full h-full rounded-xl overflow-hidden">
-          <slot></slot>
-          <img
-            v-if="!hasDefaultSlot"
-            :src="getImageUrl('images/contact.png')"
-          />
+        <div
+          class="
+            split-img-wrapper
+            w-full
+            h-full
+            rounded-xl
+            overflow-hidden
+            relative
+          "
+        >
+          <slot>
+            <!-- This is just for scaffolding, won't work on mobile -->
+            <div class="absolute inset-0 bg-black"></div>
+          </slot>
         </div>
       </section>
     </div>
