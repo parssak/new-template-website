@@ -15,7 +15,13 @@ const { flipped, leftClass, rightClass } = defineProps({
       `"
     >
       <div class="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
-        <slot name="left"></slot>
+        <slot name="left">
+          <h2>Lorem Ipsum</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
+            molestiae!
+          </p>
+        </slot>
       </div>
     </div>
     <div
@@ -31,7 +37,9 @@ const { flipped, leftClass, rightClass } = defineProps({
         
       `"
     >
-      <slot name="right"></slot>
+      <slot name="right">
+        <div class="absolute inset-0 w-full h-full bg-blue-200"></div>
+      </slot>
     </div>
   </main>
 </template>
